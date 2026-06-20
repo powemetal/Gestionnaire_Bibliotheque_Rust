@@ -1,12 +1,18 @@
 use crate::livres::{Livre, LivreTemp};
 
-pub fn conversion_livre_complet(temp: LivreTemp) -> Livre {
-    Livre {
-        titre: temp.titre.unwrap(),
-        auteur: temp.auteur.unwrap(),
-        annee: temp.annee.unwrap(),
-        pages: temp.pages.unwrap(),
-        genre: temp.genre.unwrap(),
-        statut: temp.statut,
+pub fn conversion_livre_complet(livre: &LivreTemp) -> Result<Livre, String> {
+    if !livre.est_complet() {
+        return Err("Le livre est incomplet, veuillez remplir tous les champs.".into());
     }
+
+    let livre = Livre {
+        titre: livre.titre.clone().unwrap(),
+        auteur: livre.auteur.clone().unwrap(),
+        annee: livre.annee.unwrap(),
+        pages: livre.pages.unwrap(),
+        genre: livre.genre.clone().unwrap(),
+        statut: livre.statut,
+    };
+
+    Ok(livre)
 }

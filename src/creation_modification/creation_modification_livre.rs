@@ -9,7 +9,7 @@ use crate::creation_modification::modifier_champ::modifier_champ;
 use crate::creation_modification::champ::Champ;
 use crate::creation_modification::demander_valeur_champ::demander_valeur_champ;
 use crate::creation_modification::conversion_livre_complet::conversion_livre_complet;
-use crate::creation_modification::sauvegareder_livre::sauvegarder_livre; 
+use crate::creation_modification::sauvegarder_livre::sauvegarder_livre; 
 
 
 use crate::livres::{Livre, LivreTemp};
@@ -52,7 +52,7 @@ pub fn creation_livre(livre:Option<Livre>,  bibliotheque: &mut Bibliotheque){
                 let valeur = demander_valeur_champ("Entrez le nouveau nombre de pages: ");
                 match valeur.parse::<i32>() {
                     Ok(_) => modifier_champ(&mut livre_temp, (Champ::Pages, valeur)),
-                    Err(_) => afficher_message_jaune("Veillez entrer un nombre"),
+                    Err(_) => afficher_message_jaune("\nVeillez entrer un nombre"),
                 }
                 
             }
@@ -61,14 +61,20 @@ pub fn creation_livre(livre:Option<Livre>,  bibliotheque: &mut Bibliotheque){
                 modifier_champ(&mut livre_temp, (Champ::Genre, valeur));
             }
             "s" => {
-                let livre_complet = conversion_livre_complet(livre_temp);
-                match sauvegarder_livre(livre_complet, bibliotheque){
-                    Ok(_) => afficher_message_vert("Sauvegarde du livre reussie"),
-                    Err(_) => afficher_message_jaune("Echec de la sauvegarde du livre {}"),
-                }
-                
+                let livre_complet = match conversion_livre_complet(&livre_temp) {
+                    Ok(l) => l, 
+                    Err(e) => {
+                        afficher_message_jaune(&e);
+                        continue;
+                    }
+                };
+                sauvegarder_livre(livre_complet, bibliotheque);
+                afficher_message_vert("Sauvegarde Reussie!");
                 break;
             }
+                
+            
+
             "q" => {break;}
             _ => {afficher_message_jaune("\nCe choix est invalide");}
         }

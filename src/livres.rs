@@ -1,8 +1,8 @@
-use std::default;
+// use std::default;
 
 use serde::Deserialize;
 
-#[derive(Debug, Deserialize, Default)]
+#[derive(Debug, Deserialize, Default, Clone, Copy)]
 #[serde(rename_all = "PascalCase")]
 pub enum Statut {
     #[default]
@@ -39,9 +39,9 @@ pub trait AfficherStatut {
     fn afficher(&self) -> &str;
 }
 
-pub trait AfficherLivre {
-    fn afficher(&self);
-}
+// pub trait AfficherLivre {
+//     fn afficher(&self);
+// }
 
 impl AfficherStatut for Statut {
     fn afficher(&self) -> &str {
@@ -52,13 +52,23 @@ impl AfficherStatut for Statut {
     }
 }
 
-impl AfficherLivre for Livre {
-    fn afficher(&self) {
-        println!(" Titre: {}", self.titre);
-        println!("Auteur: {}", self.auteur);
-        println!(" Année: {}", self.annee);
-        println!(" Pages: {}", self.pages);
-        println!(" Genre: {}", self.genre);
-        println!("Statut: {}", self.statut.afficher());
+// impl AfficherLivre for Livre {
+//     fn afficher(&self) {
+//         println!(" Titre: {}", self.titre);
+//         println!("Auteur: {}", self.auteur);
+//         println!(" Année: {}", self.annee);
+//         println!(" Pages: {}", self.pages);
+//         println!(" Genre: {}", self.genre);
+//         println!("Statut: {}", self.statut.afficher());
+//     }
+// }
+
+impl LivreTemp {
+    pub fn est_complet(&self) -> bool {
+        self.titre.is_some()
+        && self.auteur.is_some()
+        && self.annee.is_some()
+        && self.pages.is_some()
+        && self.genre.is_some()
     }
 }
