@@ -21,18 +21,18 @@ pub fn rechercher(bibliotheque: &Bibliotheque) {
             Some(1) => {
                 let recherche = input_valeur("Entrez le titre a rechercher: ");
                 let resultat = recherche_par_champ(&bibliotheque, Champ::Titre, &recherche);
-                afficher_tableau(&resultat, &format!("Resultats trouves avec titre: {}", &recherche));
+                afficher_tableau(&resultat, &format!("\nResultats trouves avec titre: \"{}\"", &recherche));
             },
 
             Some(2) => {
                 let recherche = input_valeur("Entrez l'auteur a rechercher: ");
                 let resultat = recherche_par_champ(&bibliotheque, Champ::Auteur, &recherche);
-                afficher_tableau(&resultat, &format!("Resultats trouves avec auteur {}", &recherche));
+                afficher_tableau(&resultat, &format!("Resultats trouves avec auteur \"{}\"", &recherche));
             },
             Some(3) => {
                 let recherche = input_valeur("Entrez le genre a rechercher: ");
                 let resultat = recherche_par_champ(&bibliotheque, Champ::Genre, &recherche);
-                afficher_tableau(&resultat, &format!("Resultats trouves avec genre {}", &recherche));
+                afficher_tableau(&resultat, &format!("Resultats trouves avec genre \"{}\"", &recherche));
             },
 
             Some(4) => {
@@ -43,7 +43,9 @@ pub fn rechercher(bibliotheque: &Bibliotheque) {
                 let resultat = bibliotheque.livres.iter().filter(|l| l.statut == Statut::Emprunte).cloned().collect::<Vec<Livre>>();
                 afficher_tableau(&resultat, &"Livres emprunté:");
             },
-            Some(6) => {break},
+            Some(6) => {
+                break
+            },
             _ => {},
         }
     }

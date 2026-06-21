@@ -4,3 +4,7 @@ pub mod affichage_couleur_mod_champs;
 pub mod affichage_tableau;
 pub mod affichage_couleurs_messages;
 pub mod affichage_menu_recherche_champ;
+pub mod affichage_menu_changer_statut;
+pub mod affichage_statistiques;
+pub mod message_sortie;
+pub mod message_accueil;

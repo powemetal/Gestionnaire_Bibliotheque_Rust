@@ -1,5 +1,6 @@
 use crate::affichage::affichage_couleurs_messages::afficher_message_jaune;
 use crate::affichage::affichage_tableau::afficher_tableau;
+use crate::affichage::affichage_menu_changer_statut::affichage_menu_changer_statut;
 
 use crate::livres::bibliotheque::Bibliotheque;
 
@@ -11,12 +12,13 @@ use crate::creation_modification::changer_statut_livre::changer_statut_livre;
 
 pub fn menu_changer_statut(bibliotheque: &mut Bibliotheque) {
     loop {
-        let recherche = input_valeur("Entrez le titre du livre a modifier le statut: ");
+        affichage_menu_changer_statut();
+        let recherche = input_valeur("Titre (Vide pour afficher toute la liste) > ");
 
         let livre = match trouver_livre_unique(bibliotheque, &recherche){
             Some(l) =>l,
             None => {
-                println!("Aucun livre trouvé");
+                println!("Aucun livre trouvé\n");
                 break
             },
         };
@@ -25,7 +27,7 @@ pub fn menu_changer_statut(bibliotheque: &mut Bibliotheque) {
         let index = match bibliotheque.livres.iter().position(|l| l == &livre) {
             Some(i) => i,
             None => {
-                afficher_message_jaune("Livre non trouvé dans la bibliotheque");
+                afficher_message_jaune("Livre non trouvé dans la bibliotheque\n");
                 break;
             }
         };
