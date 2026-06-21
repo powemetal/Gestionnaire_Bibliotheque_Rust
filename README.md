@@ -22,14 +22,14 @@ Un systeme de gestion de bibliotheque en mode console developpe en Rust. Le prog
 
 Le projet est entierement modularise pour separer la logique metier de l'affichage :
 
-src/
-|-- main.rs
-|-- affichage/
-|-- creation_modification/
-|-- livres/
-|-- recherche/
-|-- statistiques/
-`-- utils/
+src/  
+|-- main.rs  
+|-- affichage/  
+|-- creation_modification/  
+|-- livres/  
+|-- recherche/  
+|-- statistiques/  
+`-- utils/  
 
 
 ---
