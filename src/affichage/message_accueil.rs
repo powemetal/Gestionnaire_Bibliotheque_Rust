@@ -12,7 +12,7 @@ pub fn message_accueil() {
        '''''''''''''''''';''';''''''''''''''''''
                           '''
 
-*          Bienvenue dans la bibliotheque!             *
+*          Bienvenue dans la bibliothèque!             *
 
  *******************************************************
 ")

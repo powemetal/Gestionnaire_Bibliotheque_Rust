@@ -3,7 +3,9 @@ use crate::affichage::affichage_tableau::afficher_tableau;
 use crate::affichage::affichage_menu_changer_statut::affichage_menu_changer_statut;
 
 use crate::livres::bibliotheque::Bibliotheque;
+use crate::livres::livre::{Affichable, AfficherStatut};
 
+// use crate::livres::statut::Statut;
 use crate::recherche::trouver_livre_unique::trouver_livre_unique;
 
 use crate::utils::input_valeur::input_valeur;
@@ -34,12 +36,13 @@ pub fn menu_changer_statut(bibliotheque: &mut Bibliotheque) {
 
         let livre = &mut bibliotheque.livres[index];
         
-        afficher_tableau(&[livre.clone()], "Livre a changer le statut");
-        let confirmation = input_valeur("Entrez (o/O) pour changer le statut> ");
+        // afficher_tableau(&[livre.clone()], "Changer de statut?");
+        livre.afficher();
+        let confirmation = input_valeur(format!("Entrez (o/O) changer le statut pour {}> ", livre.statut.afficher_inverse()));
         match confirmation.to_lowercase().trim() {
             "o" => {
                 changer_statut_livre(livre);
-                afficher_message_jaune("Statut du livre changé");
+                afficher_message_jaune("Changement de statut");
                 afficher_tableau(&[livre.clone()], "Livre a changer le statut");
                 break;
             },

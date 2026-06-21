@@ -42,7 +42,7 @@ pub fn creation_livre(livre:Option<Livre>,  bibliotheque: &mut Bibliotheque){
                 let valeur = input_valeur("Entrez la nouvelle Année: ");
                 match valeur.parse::<i32>() {
                     Ok(_) => modifier_champ(&mut livre_temp, (Champ::Annee, valeur)),
-                    Err(_) => afficher_message_jaune("\nVeillez entrer un nombre"),
+                    Err(_) => afficher_message_jaune("\nVueillez entrer un nombre"),
                 };
                 
             }
@@ -50,7 +50,7 @@ pub fn creation_livre(livre:Option<Livre>,  bibliotheque: &mut Bibliotheque){
                 let valeur = input_valeur("Entrez le nouveau nombre de pages: ");
                 match valeur.parse::<i32>() {
                     Ok(_) => modifier_champ(&mut livre_temp, (Champ::Pages, valeur)),
-                    Err(_) => afficher_message_jaune("\nVeillez entrer un nombre"),
+                    Err(_) => afficher_message_jaune("\nVueillez entrer un nombre"),
                 }
                 
             }

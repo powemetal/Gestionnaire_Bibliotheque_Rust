@@ -18,7 +18,9 @@ pub fn menu_stats(bibliotheque: &Bibliotheque) {
         let nombre_disponible = stat_disponible(bibliotheque);
         let nombre_emprunte = stat_emprunte(bibliotheque);
 
-        affichage_statistiques( total_livres, total_pages, moyenne_pages, nombre_disponible, nombre_emprunte,);
+        let donnees = (total_livres, total_pages, moyenne_pages, nombre_disponible, nombre_emprunte,);
+
+        affichage_statistiques(donnees);
 
         let _choix = input_valeur("Appuyez sur Entrée pour quitter...");
         break;

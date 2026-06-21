@@ -18,11 +18,12 @@ pub struct Livre {
 
 pub trait AfficherStatut {
     fn afficher(&self) -> &str;
+    fn afficher_inverse(&self) -> &str;
 }
 
-// pub trait AfficherLivre {
-//     fn afficher(&self);
-// }
+pub trait Affichable {
+    fn afficher(&self);
+}
 
 impl AfficherStatut for Statut {
     fn afficher(&self) -> &str {
@@ -31,16 +32,23 @@ impl AfficherStatut for Statut {
             Statut::Emprunte => "\x1b[91mEmprunté\x1b[0m",
         }
     }
+
+    fn afficher_inverse(&self) -> &str {
+        match self {
+            Statut::Emprunte => "\x1b[92mDisponible\x1b[0m",
+            Statut::Disponible => "\x1b[91mEmprunté\x1b[0m",
+        }
+    }
 }
 
-// impl AfficherLivre for Livre {
-//     fn afficher(&self) {
-//         println!(" Titre: {}", self.titre);
-//         println!("Auteur: {}", self.auteur);
-//         println!(" Année: {}", self.annee);
-//         println!(" Pages: {}", self.pages);
-//         println!(" Genre: {}", self.genre);
-//         println!("Statut: {}", self.statut.afficher());
-//     }
-// }
+impl Affichable for Livre {
+    fn afficher(&self) {
+        println!(" Titre: {}", self.titre);
+        println!("Auteur: {}", self.auteur);
+        println!(" Année: {}", self.annee);
+        println!(" Pages: {}", self.pages);
+        println!(" Genre: {}", self.genre);
+        println!("Statut: {}", self.statut.afficher());
+    }
+}
 

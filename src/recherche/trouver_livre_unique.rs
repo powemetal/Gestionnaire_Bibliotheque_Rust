@@ -21,7 +21,7 @@ pub fn trouver_livre_unique(bibliotheque: &Bibliotheque, titre: &str) -> Option<
         _ => {
             afficher_tableau(&resultats, "Livres trouvés");
             let choix = match valider_choix(resultats.len() as i32) {
-                Some(c) => c,   // conversion 1-based → 0-based
+                Some(c) => c-1,   
                 None => return None,
             };
             let choix = choix as usize;

@@ -12,7 +12,7 @@ pub fn afficher_tableau(livres: &[Livre], titre: &str) {
         // compteur += 1;
         println!(
             "| {:^5.5}| {:<30.30} | {:<20.20} | {:<6} | {:<6} | {:<10.10} | {:19.19} |",
-            i, livre.titre, livre.auteur, livre.annee, livre.pages, livre.genre, livre.statut.afficher());
+            i+1, livre.titre, livre.auteur, livre.annee, livre.pages, livre.genre, livre.statut.afficher());
     }
     println!(" ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯");
     println!();

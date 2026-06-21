@@ -1,6 +1,6 @@
 
 
-pub fn affichage_statistiques(total_livres: i32, total_pages: i32, moyenne_pages: f64, nombre_disponible: i32, nombre_emprunte: i32) {
+pub fn affichage_statistiques((total_livres, total_pages, moyenne_pages, nombre_disponible, nombre_emprunte):(i32, i32, f64, i32, i32)) {
 
 
     println!();
@@ -19,7 +19,7 @@ pub fn affichage_statistiques(total_livres: i32, total_pages: i32, moyenne_pages
 
 
     println!();
-    println!("{:^42}","Nombre disponible    Nombre empruntes");
+    println!("{:^42}","Nombre disponible    Nombre empruntés");
     println!("{:^21}{:^21}", nombre_disponible, nombre_emprunte);
     println!();
     println!("+==========================================+");
