@@ -4,7 +4,7 @@
 ![Code Status](https://img.shields.io/badge/status-stable%20%2F%20tested-success?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
-Un système de gestion de bibliothèque en mode console développe en Rust. Le programme permet de charger, rechercher, modifier et analyser un catalogue de livres stocke au format JSON, le tout protège par une validation stricte des types et des entrées.
+Un système de gestion de bibliothèque en mode console développé en Rust. Le programme permet de charger, rechercher, modifier et analyser un catalogue de livres stocke au format JSON, le tout protège par une validation stricte des types et des entrées.
 
 ---
 
@@ -12,7 +12,7 @@ Un système de gestion de bibliothèque en mode console développe en Rust. Le p
 
 * Chargement Dynamique : Lecture automatique du catalogue depuis un fichier livres.json via Serde.
 * Création : Système de modification champ par champ (Titre, Auteur, Année, Pages, Genre) utilisant une structure temporaire (LivreTemp) pour éviter les données partielles.
-* Recherche Avancée : Filtrage  par champ textuel (insensible a la casse) ou par statut (Disponible / Emprunte).
+* Recherche Avancée : Filtrage  par champ textuel (insensible à la casse) ou par statut (Disponible / Emprunte).
 * Gestion des Emprunts : Inversion rapide du statut d'un livre avec confirmation de l'utilisateur.
 * Statistiques en Temps Reel : Calcul du nombre total de livres, du total de pages, de la moyenne de pages par livre et de la répartition des statuts (avec sécurité contre la division par zéro).
 
@@ -39,7 +39,7 @@ src/
 ## Installation et Exécution
 
 ### Prérequis
-* Avoir installe la dernière version stable de Rust (cargo).
+* Avoir installé la dernière version stable de Rust (cargo).
 * Avoir un fichier livres.json valide situe dans le répertoire ../Data/. (Un fichier est fourni en guise d'example)
 
 ### Lancement
