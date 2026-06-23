@@ -40,8 +40,8 @@ impl  Statut {
 impl Livre {
     pub fn changer_statut(&mut self) {
     self.statut = match self.statut {
-        Statut::Emprunte => Statut::Emprunte,
-        Statut::Disponible => Statut::Disponible,
+        Statut::Emprunte => Statut::Disponible,
+        Statut::Disponible => Statut::Emprunte,
         }
     }
 }
