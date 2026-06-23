@@ -7,16 +7,14 @@ use crate::affichage::affichage_couleurs_messages::{afficher_message_jaune, affi
 use crate::creation_modification::conversion_en_livre_temp::conversion_en_livre_temp;
 use crate::livres::bibliotheque::Bibliotheque;
 use crate::creation_modification::modifier_champ::modifier_champ;
-use crate::livres::champ::Champ;
+use crate::livres::enum_champ::Champ;
 use crate::utils::input_valeur::input_valeur;
 use crate::creation_modification::conversion_en_livre_complet::conversion_livre_complet;
 use crate::creation_modification::sauvegarder_livre::sauvegarder_livre; 
 
 
 use crate::livres::livre::Livre;
-// use crate::livres::livre_temp::LivreTemp;
 
-// use crate ::bibliotheque::Bibliotheque;
 
 pub fn creation_livre(livre:Option<Livre>,  bibliotheque: &mut Bibliotheque){
     let mut livre_temp = conversion_en_livre_temp(livre);

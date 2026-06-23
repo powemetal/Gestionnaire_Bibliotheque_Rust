@@ -2,7 +2,7 @@ use crate::affichage::affichage_menu_recherche_champ::menu_recherche_par_champs;
 use crate::affichage::affichage_tableau::afficher_tableau;
 
 // use crate::livres::livre::Livre;
-use crate::livres::champ::Champ;
+use crate::livres::enum_champ::Champ;
 use crate::livres::bibliotheque::Bibliotheque;
 use crate::livres::statut::Statut;
 use crate::livres::livre::Livre;

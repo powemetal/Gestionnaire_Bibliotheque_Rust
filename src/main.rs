@@ -5,13 +5,6 @@ mod affichage;
 mod recherche;
 mod statistiques;
 
-
-
-// use menu::creation_livre;
-
-
-
-
 use utils::validation;
 use validation::valider_choix;
 

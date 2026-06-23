@@ -1,5 +1,5 @@
 use crate::livres::livre_temp::LivreTemp;
-use crate::livres::champ::Champ;
+use crate::livres::enum_champ::Champ;
 
 
 pub fn modifier_champ(livre: &mut LivreTemp, (champ, valeur): (Champ , String)){

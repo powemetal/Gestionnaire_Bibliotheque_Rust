@@ -1,7 +1,7 @@
 use crate::livres::bibliotheque::Bibliotheque;
 use crate::livres::livre::Livre;
-use crate::livres::champ::Champ;
-// use crate::recherche;
+use crate::livres::enum_champ::Champ;
+
 
 pub fn recherche_par_champ(bibliotheque: &Bibliotheque, champ: Champ, recherche: &str) -> Vec<Livre> {
     let mut resultats: Vec<Livre> = Vec::new();

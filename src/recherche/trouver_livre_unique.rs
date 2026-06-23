@@ -1,7 +1,4 @@
-// use std::result;
-
 use crate::livres::bibliotheque::Bibliotheque;
-// use crate::livres::champ::Champ;
 use crate::livres::livre::Livre;
 
 use crate::affichage::affichage_tableau::afficher_tableau;

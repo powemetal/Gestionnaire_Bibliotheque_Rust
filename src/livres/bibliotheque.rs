@@ -17,10 +17,6 @@ impl Bibliotheque {
         Self {livres}
     }
 
-    // pub fn ajouter_livre(&mut self, livre: Livre){
-    //     self.livres.push(livre);
-    // }
-
     // pub fn sauvegarder(){
     //     //plus tard
     // }
